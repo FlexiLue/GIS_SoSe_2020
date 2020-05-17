@@ -1,0 +1,189 @@
+/* Color:
+
+#4a4238
+#ee562f
+#4cc0be
+#cee0dc
+#fdfbf2 
+*/
+/* General */
+body{
+    font-family: sans-serif;
+    background: url('bg.png');
+    width: 800px;
+    margin: auto;
+    color: #4A4238;
+}
+
+p{
+    margin:0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    color:#4A4238;
+}
+
+a{
+    color: #FDFBF2;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #cee0dc;
+}
+
+
+img , audio{
+    margin: 15px;
+}
+
+#profilbild{
+    border-radius: 20%;
+    width: 200px;
+}
+
+.grid{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: grid; 
+    grid-template-columns:1fr 1fr 1fr; 
+    grid-auto-columns: 30%;
+    grid-auto-flow: column;
+    grid-gap: 0 5%;
+}
+
+.grid div{
+    background-color: #4A4238;
+    fill: #FDFBF2;
+    border-radius: 5%;
+}
+.gridcontainer{
+    margin: 20%;
+}
+
+.grid div p{
+    color: #FDFBF2;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+
+/* Source */
+.source{
+    font-weight: 500;
+    font-size: 23px;
+    color: #fdfbf2;
+}
+.sourcecontainer{
+    background-color: #4cc0be;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 10px;
+    margin:10px;
+}
+
+/* Center */
+.center{
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/* Navigation */
+#navigation{
+    padding: 5px;
+    background-color: #ee562f;
+    border-radius: 5px;
+    float: right;
+    position: sticky;
+    top: 0px;
+}
+#navigation p{
+    color: #FDFBF2;
+    font-weight: 900;
+}
+
+#active{
+    color: #4A4238;
+}
+
+/* Header */
+#header{
+    background-color: #4A4238;
+    height:800px;
+    border-radius: 50%;
+    margin-top: -400px;
+}
+#header h1{
+    color: #FDFBF2;
+    margin: auto; 
+    padding-top: 500px;
+    padding-left: 150px;
+    font-size: 90px;
+}
+
+#header p{
+    font-size: 20px;
+    color: #FDFBF2;
+    padding-left: 200px;
+    margin: 5px;
+    text-align: left;
+}
+
+.iconcontainer svg{
+    margin: 5px;
+    fill: #FDFBF2;
+}
+
+.iconcontainer svg:hover{
+    fill: #ee562f;
+}
+
+.iconcontainer{
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Headings */
+.headingbox{
+    border-bottom-style: solid;
+}
+.headingbox h2{
+    margin: 0;
+    font-size: 35px;
+}
+
+/* Kontakt */
+input, textarea{
+    display: block;
+    margin: 5px 0 5px 0;
+    height: 35px;
+    background-color: grey;
+    padding-left: 10px;
+    font-size: 18px;
+    color: #FDFBF2;
+    border: none;
+}
+#nachricht{
+    height: 150px;
+}
+
+#button{
+    margin: 5px 0 5px 0;
+    height: 35px;
+    background-color: grey;
+    font-size: 18px;
+    border: none;
+    color: #FDFBF2;
+}
+
+form p{
+    text-align: left;
+    margin: 5px;
+    color: grey;
+}
