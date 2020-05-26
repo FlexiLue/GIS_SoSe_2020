@@ -115,6 +115,7 @@ function add(id: string, products: Array<Product>): void {
 
         //<img src="jalsölfasf">
         let img: HTMLElement = initializeElement("img", "src", element.image);
+        img.setAttribute("alt", element.name);
         //hinzugefügt
         productcontainer.appendChild(img);
 
