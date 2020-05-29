@@ -1,7 +1,4 @@
-import {sweetProducts} from "./product";
-import {Product} from "./product";
-import {saltyProducts} from "./product";
-
+namespace script {
 
 function initializeElement(tag: string, attribute?: string, attributeName?: string, node?: string): HTMLElement {
     let element: HTMLElement = document.createElement(tag);
@@ -51,5 +48,6 @@ function add(id: string, products: Array<Product>): void {
     });
 }
 
-add("sweets", sweetProducts);
-add("saltys", saltyProducts);
+add("sweets", script.sweetProducts);
+add("saltys", script.saltyProducts);
+}

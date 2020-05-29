@@ -1,3 +1,5 @@
+namespace script {
+
 export interface Product {
     name: string;
     image: string;
@@ -44,6 +46,7 @@ export let sweetProducts: Array<Product> = [
     }
 ];
 
+
 export let saltyProducts: Array<Product> = [    
     {
         name: "Hombre Nachos Classic 125g",
@@ -82,3 +85,4 @@ export let saltyProducts: Array<Product> = [
         price: "2,49€"
     }
 ];
+}
