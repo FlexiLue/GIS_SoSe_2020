@@ -1,0 +1,196 @@
+/* 
+#011627
+#fdfffc
+#2ec4b6
+#e71d36
+#ff9f1c
+*/
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+
+#header{
+    background: #011627;
+    height: 85px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+#header h1{
+    font-family: 'Luckiest Guy', cursive;
+    color: #fdfffc;
+    font-size: 35px;
+}
+
+#header svg{
+    fill:#fdfffc;
+    stroke-width: 20px;
+    min-width: 64px;
+}
+#search{
+    display: none;
+}
+
+#cartCountDiv{
+    color: white;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-color: #e71d36;
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+/* Kategories */
+.imgcontainer{
+    display: flex;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imgcontainer>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #e71d36;
+    flex-basis: 40%;
+    height: 120px;
+    max-width: 800px;
+}
+.imgcontainer>div>div{
+    display: flex;
+    background: #fdfffc;
+    margin: auto;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+.imgcontainer>div>div>div{
+    display: block;
+    margin: auto;
+}
+
+a>img[alt="Zuckerstange"]{
+    height: 40px;
+}
+a img[alt="Chips"]{
+    height: 50px;
+}
+
+/* Boxes */
+.heading{
+    text-align: center;
+    background-color: #011627;
+    font-size: 40px;
+    width: max-content;
+    padding: 5px 20% 5px 20%;
+    color: #fdfffc;
+    margin: 10px auto 10px auto; 
+}
+
+.heading+p{
+    display: none; 
+}
+
+.container{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productcontainer{
+    flex-flow: column;
+    align-items: center;
+    display: flex;
+    max-width: 400px;
+    margin: 10px 2% 10px 2%;
+    padding: 10px;
+    /* border-color: #011627;
+    border-bottom: solid;
+    border-width: 10px; */
+    justify-content: space-evenly;
+}
+
+.productcontainer p{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.productcontainer button{
+    border: none;
+    background-color: #e71d36;
+    color: #fdfffc;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+
+
+/* Footer */
+#footer{
+    height: 30px;
+    background-color: #011627;
+    color: #fdfffc;
+}
+
+
+
+
+@media screen and (min-width: 913px){
+    #search{
+        display: inline-block;
+        border: none;
+        height: 40px;
+        width: 290px;
+    }
+    #header{
+        background: #011627;
+        height: 85px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        justify-items: center;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .heading{
+        text-align: center;
+        background-color: #011627;
+        font-size: 40px;
+        width: 40%;
+        padding: 5px 20% 5px 20%;
+        color: #fdfffc;
+        margin: 10px auto 5px auto; 
+    }
+    .heading+p{
+        text-align: center;
+        background-color: #011627;
+        font-size: 25px;
+        width: 40%;
+        padding: 5px 20% 5px 20%;
+        color: #fdfffc;
+        margin: 0px auto 0px auto; 
+        display: block;
+    }
+}
