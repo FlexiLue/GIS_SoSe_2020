@@ -25,7 +25,6 @@ var script2;
         let productcontainer = initializeElement("div", "class", "productcontainer");
         productcontainer.id = script2.products[productIndex].index.toString();
         //<productcontainer angefügt
-        console.log(container);
         container?.appendChild(productcontainer);
         //<h2>productname<h2> erstellt 
         let h2 = initializeElement("h2", undefined, undefined, script2.products[productIndex].name);
@@ -85,11 +84,15 @@ var script2;
         switch (categorie) {
             case "sweet": {
                 let container = document.getElementById("sweetsDiv");
-                container.remove();
+                while (container.firstChild) {
+                    container.removeChild(container.lastChild);
+                }
             }
             case "salty": {
                 let container = document.getElementById("saltyDiv");
-                container.remove();
+                while (container.firstChild) {
+                    container.removeChild(container.lastChild);
+                }
             }
         }
     }

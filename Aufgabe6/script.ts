@@ -30,7 +30,6 @@ function initializeProducts(container: HTMLDivElement, productIndex: number): vo
     let productcontainer: HTMLElement = initializeElement("div", "class", "productcontainer");
     productcontainer.id = products[productIndex].index.toString();
     //<productcontainer angefügt
-    console.log(container);
     container?.appendChild(productcontainer);
 
 
@@ -100,11 +99,15 @@ function removeProducts(categorie: string): void {
     switch (categorie) {
         case "sweet": {
             let container: HTMLDivElement = <HTMLDivElement>document.getElementById("sweetsDiv");
-            container.remove();
+            while (container.firstChild) {
+              container.removeChild(<HTMLElement>container.lastChild);
+            }
         }
         case "salty": {
             let container: HTMLDivElement = <HTMLDivElement>document.getElementById("saltyDiv");
-            container.remove();
+            while (container.firstChild) {
+              container.removeChild(<HTMLElement>container.lastChild);
+            }
         }
     }
 }
