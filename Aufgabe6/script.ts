@@ -110,6 +110,7 @@ function removeProducts(categorie: string): void {
 }
 
 function filterSweet(): void{
+    console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
     if (saltyIsShown && sweetIsShown) {
         removeProducts("salty");
     }
@@ -117,15 +118,13 @@ function filterSweet(): void{
         removeProducts("salty");
         addProducts("sweet");
     }
-    else {
-        console.log("Sweet wird bereits angezeigt");
-    }
     saltyIsShown = false;
     sweetIsShown = true;
     console.log(sweetIsShown + " " + saltyIsShown);
 }
 
 function filterSalty(): void {
+    console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
     if (saltyIsShown && sweetIsShown) {
         removeProducts("sweet");
     }
@@ -133,12 +132,8 @@ function filterSalty(): void {
         removeProducts("sweet");
         addProducts("salty");
     }
-    else {
-        console.log("Salty wird bereits angezeigt");
-    }
     sweetIsShown = false;
     saltyIsShown = true;
+    console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
 }
-
-removeProducts("salty");
 }

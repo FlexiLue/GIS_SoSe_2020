@@ -94,6 +94,7 @@ var script2;
         }
     }
     function filterSweet() {
+        console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
         if (saltyIsShown && sweetIsShown) {
             removeProducts("salty");
         }
@@ -101,14 +102,12 @@ var script2;
             removeProducts("salty");
             addProducts("sweet");
         }
-        else {
-            console.log("Sweet wird bereits angezeigt");
-        }
         saltyIsShown = false;
         sweetIsShown = true;
         console.log(sweetIsShown + " " + saltyIsShown);
     }
     function filterSalty() {
+        console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
         if (saltyIsShown && sweetIsShown) {
             removeProducts("sweet");
         }
@@ -116,12 +115,9 @@ var script2;
             removeProducts("sweet");
             addProducts("salty");
         }
-        else {
-            console.log("Salty wird bereits angezeigt");
-        }
         sweetIsShown = false;
         saltyIsShown = true;
+        console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
     }
-    removeProducts("salty");
 })(script2 || (script2 = {}));
 //# sourceMappingURL=script.js.map
