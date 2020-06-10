@@ -3,14 +3,16 @@ namespace script2 {
 let counter: number = 0;
 let gesamtPreis: number = 0;
 
-let saltyIsShown: boolean = true;
-let sweetIsShown: boolean = true;
 
 addProducts("sweet");
 addProducts("salty");
 
-document.getElementById("sweetCategorie")?.addEventListener("click", filterSweet);
-document.getElementById("saltyCategorie")?.addEventListener("click", filterSalty);
+document.getElementById("sweetCategorie")?.addEventListener("click", function () {
+    filter("sweet");
+});
+document.getElementById("saltyCategorie")?.addEventListener("click", function () {
+    filter("salty");
+});
 
 function initializeElement(tag: string, attribute?: string, attributeName?: string, node?: string): HTMLElement {
     let element: HTMLElement = document.createElement(tag);
@@ -95,48 +97,37 @@ function addProducts (selectedCategorie: string): void {
     }
 }
 
-function removeProducts(categorie: string): void {
-    switch (categorie) {
-        case "sweet": {
-            let container: HTMLDivElement = <HTMLDivElement>document.getElementById("sweetsDiv");
-            while (container.firstChild) {
-              container.removeChild(<HTMLElement>container.lastChild);
-            }
-        }
-        case "salty": {
-            let container: HTMLDivElement = <HTMLDivElement>document.getElementById("saltyDiv");
-            while (container.firstChild) {
-              container.removeChild(<HTMLElement>container.lastChild);
-            }
-        }
-    }
-}
+function filter(categorie: String): void {
+    let sweetsDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("sweetsDiv");
+    let saltyDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("saltyDiv");
+    let sweetHeading: HTMLHeadingElement = <HTMLHeadingElement>document.getElementById("sweetHeading");
+    let saltyHeading: HTMLHeadingElement = <HTMLHeadingElement>document.getElementById("saltyHeading");
+    let sweetParagraph: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("sweetParagraph");
+    let saltyParagraph: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("saltyParagraph");
+    
+    if (categorie.match("sweet")) {
+        sweetsDiv.style.display = "flex";
+        sweetHeading.style.display = "block";
+        sweetParagraph.style.display = "block";
 
-function filterSweet(): void{
-    console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
-    if (saltyIsShown && sweetIsShown) {
-        removeProducts("salty");
-    }
-    if (saltyIsShown && !sweetIsShown) {
-        removeProducts("salty");
-        addProducts("sweet");
-    }
-    saltyIsShown = false;
-    sweetIsShown = true;
-    console.log(sweetIsShown + " " + saltyIsShown);
-}
+        saltyDiv.style.display = "none";
+        saltyHeading.style.display = "none";
+        saltyParagraph.style.display = "none";
 
-function filterSalty(): void {
-    console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
-    if (saltyIsShown && sweetIsShown) {
-        removeProducts("sweet");
     }
-    if (!saltyIsShown && sweetIsShown) {
-        removeProducts("sweet");
-        addProducts("salty");
+    if (categorie.match("salty")) {
+
+        sweetsDiv.style.display = "none";
+        sweetHeading.style.display = "none";
+        sweetParagraph.style.display = "none";
+
+        saltyDiv.style.display = "flex";
+        saltyHeading.style.display = "block";
+        saltyParagraph.style.display = "block";
     }
-    sweetIsShown = false;
-    saltyIsShown = true;
-    console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
+    if (categorie.match("all")) {
+        sweetsDiv.style.display = "flex";
+        saltyDiv.style.display = "flex";
+    }
 }
 }

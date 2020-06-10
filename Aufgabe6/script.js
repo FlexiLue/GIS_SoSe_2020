@@ -3,12 +3,14 @@ var script2;
 (function (script2) {
     let counter = 0;
     let gesamtPreis = 0;
-    let saltyIsShown = true;
-    let sweetIsShown = true;
     addProducts("sweet");
     addProducts("salty");
-    document.getElementById("sweetCategorie")?.addEventListener("click", filterSweet);
-    document.getElementById("saltyCategorie")?.addEventListener("click", filterSalty);
+    document.getElementById("sweetCategorie")?.addEventListener("click", function () {
+        filter("sweet");
+    });
+    document.getElementById("saltyCategorie")?.addEventListener("click", function () {
+        filter("salty");
+    });
     function initializeElement(tag, attribute, attributeName, node) {
         let element = document.createElement(tag);
         if (attribute != undefined && attributeName != undefined) {
@@ -80,47 +82,33 @@ var script2;
             });
         }
     }
-    function removeProducts(categorie) {
-        switch (categorie) {
-            case "sweet": {
-                let container = document.getElementById("sweetsDiv");
-                while (container.firstChild) {
-                    container.removeChild(container.lastChild);
-                }
-            }
-            case "salty": {
-                let container = document.getElementById("saltyDiv");
-                while (container.firstChild) {
-                    container.removeChild(container.lastChild);
-                }
-            }
+    function filter(categorie) {
+        let sweetsDiv = document.getElementById("sweetsDiv");
+        let saltyDiv = document.getElementById("saltyDiv");
+        let sweetHeading = document.getElementById("sweetHeading");
+        let saltyHeading = document.getElementById("saltyHeading");
+        let sweetParagraph = document.getElementById("sweetParagraph");
+        let saltyParagraph = document.getElementById("saltyParagraph");
+        if (categorie.match("sweet")) {
+            sweetsDiv.style.display = "flex";
+            sweetHeading.style.display = "block";
+            sweetParagraph.style.display = "block";
+            saltyDiv.style.display = "none";
+            saltyHeading.style.display = "none";
+            saltyParagraph.style.display = "none";
         }
-    }
-    function filterSweet() {
-        console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
-        if (saltyIsShown && sweetIsShown) {
-            removeProducts("salty");
+        if (categorie.match("salty")) {
+            sweetsDiv.style.display = "none";
+            sweetHeading.style.display = "none";
+            sweetParagraph.style.display = "none";
+            saltyDiv.style.display = "flex";
+            saltyHeading.style.display = "block";
+            saltyParagraph.style.display = "block";
         }
-        if (saltyIsShown && !sweetIsShown) {
-            removeProducts("salty");
-            addProducts("sweet");
+        if (categorie.match("all")) {
+            sweetsDiv.style.display = "flex";
+            saltyDiv.style.display = "flex";
         }
-        saltyIsShown = false;
-        sweetIsShown = true;
-        console.log(sweetIsShown + " " + saltyIsShown);
-    }
-    function filterSalty() {
-        console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
-        if (saltyIsShown && sweetIsShown) {
-            removeProducts("sweet");
-        }
-        if (!saltyIsShown && sweetIsShown) {
-            removeProducts("sweet");
-            addProducts("salty");
-        }
-        sweetIsShown = false;
-        saltyIsShown = true;
-        console.log("Salty" + saltyIsShown + "Sweet" + sweetIsShown);
     }
 })(script2 || (script2 = {}));
 //# sourceMappingURL=script.js.map
