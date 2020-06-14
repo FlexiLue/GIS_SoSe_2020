@@ -9,6 +9,7 @@ export interface Product {
     price: number;
 }
 
+
 export let products: Array<Product> = [    
     {
         index: 0,

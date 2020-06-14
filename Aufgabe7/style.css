@@ -137,6 +137,41 @@ a img[alt="Chips"]{
     font-weight: 700;
 }
 
+.gridContainer{
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    border-bottom: #011627 solid 10px;
+}
+
+.gridContainer img{
+    display: block;
+    margin: auto;
+}
+
+.gridContainer h3{
+    padding-bottom: 15px;
+}
+.gridContainer select{
+    height: 40px;
+    width: 20%;
+    margin: auto;
+    display: block;
+}
+
+.middleGrid{
+    width: 80%;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+}
 
 
 /* Footer */
@@ -146,7 +181,18 @@ a img[alt="Chips"]{
     color: #fdfffc;
 }
 
+/*Price*/
 
+#priceDiv{
+    text-align: end;
+    background-color: #011627;
+    font-size: 20px;
+    width: 80%;
+    padding: 10px 20px 10px 0;
+    color: #fdfffc;
+    margin: 10px auto 10px auto; 
+}
+/*Warenkorb*/
 
 
 @media screen and (min-width: 913px){
@@ -166,6 +212,25 @@ a img[alt="Chips"]{
         padding: 10px;
         position: sticky;
         top: 0;
+    }
+
+    .gridContainer{
+        display: grid;
+        width: 80%;
+        margin: auto;
+        grid-template-columns: 1fr 3fr 1fr;
+        padding: 10px 0 10px 0;
+    }
+    .gridContainer select{
+        height: 40px;
+        width: 100%;
+    }
+    .paddingTop{
+        padding-top: 50px;
+    }
+
+    .icon{
+        padding-top: 50px;
     }
 }
 
