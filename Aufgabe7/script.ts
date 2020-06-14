@@ -12,17 +12,17 @@ export function initialization(): void {
     addProducts("salty");
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function(): void {
     buildBuyCircle();
     updatePrice();
 });
 
 
 //Artikel Button Event Listener
-document.getElementById("sweetCategorie")?.addEventListener("click", function () {
+document.getElementById("sweetCategorie")?.addEventListener("click", function (): void {
     filter("sweet");
 });
-document.getElementById("saltyCategorie")?.addEventListener("click", function () {
+document.getElementById("saltyCategorie")?.addEventListener("click", function (): void {
     filter("salty");
 });
 
@@ -197,7 +197,7 @@ export function generateShopingcartElement (index: number): void {
     trashcanImage.src = "../Material/Icons/trash.png";
     trashcanImage.alt = "trashcan";
     trashcanImage.className = "icon";
-    trashcanImage.addEventListener("click", function(e: Event): void{
+    trashcanImage.addEventListener("click", function(e: Event): void {
         deleteItem(<HTMLElement> e.currentTarget);
     });
     thirdDiv.appendChild(trashcanImage);    
@@ -234,7 +234,7 @@ export function updateBuyCircle(): void {
     let anzahl: number = 0;
     for (let i: number = 0; i < localStorage.length; i++) {
         let key: string = <string>localStorage.key(i);
-        if (!key.match("randid") && !key.match("Warenkorb")){
+        if (!key.match("randid") && !key.match("Warenkorb")) {
             anzahl = anzahl + 1;
             localStorage.setItem("Warenkorb", String(anzahl));
         }
@@ -255,7 +255,7 @@ export function addWarenkorb (index: string): void {
     }
 }
 
-function updatePrice(): void{
+function updatePrice(): void {
     let price: number = 0;
     if (localStorage.length > 0) {
         for (let i: number = 0; i < localStorage.length; i++) {
