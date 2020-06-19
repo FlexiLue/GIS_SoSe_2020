@@ -5,7 +5,7 @@ var Aufgabe7;
     // let gesamtPreis: number = 0;
     Aufgabe7.products = [];
     //getting the json
-    Aufgabe7.getProductsJson("http://127.0.0.1:5500/Aufgabe7/products.json");
+    // getProductsJson("http://127.0.0.1:5500/Aufgabe7/products.json");
     //product inizilatzation
     function initialization() {
         addProducts("sweet");
@@ -13,6 +13,7 @@ var Aufgabe7;
     }
     Aufgabe7.initialization = initialization;
     window.addEventListener("load", function () {
+        Aufgabe7.getProductsJson("https://flexilue.github.io/GIS_SoSe_2020/Aufgabe7/products.json");
         buildBuyCircle();
         updatePrice();
     });
