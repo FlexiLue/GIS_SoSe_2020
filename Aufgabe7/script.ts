@@ -13,7 +13,7 @@ export function initialization(): void {
 }
 
 window.addEventListener("load", function(): void {
-    getProductsJson("http://127.0.0.1:5500/Aufgabe7/https://flexilue.github.io/GIS_SoSe_2020/Aufgabe7/products.json");
+    getProductsJson("https://flexilue.github.io/GIS_SoSe_2020/Aufgabe7/products.json");
     buildBuyCircle();
     updatePrice();
 });
