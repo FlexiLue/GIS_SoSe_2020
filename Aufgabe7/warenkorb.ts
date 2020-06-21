@@ -3,7 +3,7 @@ namespace Aufgabe7 {
     renderShopingcart();
 
     export async function renderShopingcart(): Promise<void> {
-        await getProductsJson("http://127.0.0.1:5500/Aufgabe7/products.json");
+        await getProductsJson("https://flexilue.github.io/GIS_SoSe_2020/Aufgabe7/products.json");
         warenkorbInitialization();
         updatePrice();
     }
