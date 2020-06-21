@@ -1,0 +1,21 @@
+{
+  "name": "flexigissose2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ../script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlexiLue/GIS_SoSe_2020.git"
+  },
+  "author": "Felix Lütte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlexiLue/GIS_SoSe_2020/issues"
+  },
+  "homepage": "https://github.com/FlexiLue/GIS_SoSe_2020#readme"
+}
