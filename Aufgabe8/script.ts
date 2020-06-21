@@ -1,6 +1,7 @@
 namespace A08Server {
     let submit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("abgabe");
     submit.addEventListener("click", server);
+
     async function server(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://flexigissose2020.herokuapp.com";
