@@ -10,6 +10,7 @@ var Aufgabe7;
         Aufgabe7.addProducts("salty");
     }
     Aufgabe7.initialization = initialization;
+    //Artikel Button Event Listener
     document.getElementById("sweetCategorie")?.addEventListener("click", function () {
         filter("sweet");
     });
