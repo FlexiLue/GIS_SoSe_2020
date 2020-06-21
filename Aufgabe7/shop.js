@@ -3,7 +3,7 @@ var Aufgabe7;
 (function (Aufgabe7) {
     renderShop();
     async function renderShop() {
-        await Aufgabe7.getProductsJson("http://127.0.0.1:5500/Aufgabe7/products.json");
+        await Aufgabe7.getProductsJson("https://flexilue.github.io/GIS_SoSe_2020/Aufgabe7/products.json");
         addProducts("sweet");
         addProducts("salty");
     }
