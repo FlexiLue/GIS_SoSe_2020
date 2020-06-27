@@ -21,6 +21,7 @@ namespace A09Server {
     }
 
     async function clickJSON(): Promise<void> {
+        
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://flexigissose2020.herokuapp.com";
         url += "/json";

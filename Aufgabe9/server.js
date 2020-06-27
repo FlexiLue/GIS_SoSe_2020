@@ -32,15 +32,15 @@ var A09Server;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let path = url.pathname;
-            if (path == "/html") {
+            let pfad = url.pathname;
+            if (pfad == "/html") {
                 for (let key in url.query) {
                     _response.write(key + ": " + url.query[key] + "<br/>");
                 }
             }
-            else if (path == "/json") {
-                let jsonString = JSON.stringify(url.query);
-                _response.write(jsonString);
+            else if (pfad == "/json") {
+                let jsonAusgabe = JSON.stringify(url.query);
+                _response.write(jsonAusgabe);
             }
         }
         _response.end();
